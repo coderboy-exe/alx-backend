@@ -25,6 +25,7 @@ users = {
     4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
 }
 
+
 def get_user():
     """ Gets user by user_id from user data table """
     keys = users.keys()
@@ -61,7 +62,7 @@ def get_timezone():
     tz = request.args.get('timezone')
 
     if g.user and g.user.get('timezone'):
-        tz = g.user.get('timezone');
+        tz = g.user.get('timezone')
 
     if tz:
         try:

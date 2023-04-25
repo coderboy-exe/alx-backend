@@ -25,6 +25,7 @@ users = {
     4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
 }
 
+
 def get_user():
     """ Gets user by user_id from user data table """
     keys = users.keys()
