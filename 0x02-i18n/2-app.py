@@ -10,7 +10,7 @@ class Config(object):
     """ Config class foe flask_babel instance """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
-    BABEL_DEFAULT_TIMEZONE = "UTC"
+    BABEL_DEFAULT_TIMEZONE = UTC
 
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ babel = Babel(app)
 @babel.localeselector
 def get_locale():
     """ gets locale best match nased off config """
-    return request.accepted_languages.best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/', strict_slashes=False)
