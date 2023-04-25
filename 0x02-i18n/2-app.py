@@ -10,7 +10,7 @@ class Config(object):
     """ Config class foe flask_babel instance """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
-    BABEL_DEFAULT_TIMEZONE = UTC
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
 app = Flask(__name__)
@@ -25,7 +25,7 @@ def get_locale():
     return request.accepted_languages.best_match(app.config['LANGUAGES'])
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def index():
     """ index route """
     return render_template('2-index.html')

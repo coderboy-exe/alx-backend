@@ -9,7 +9,7 @@ from pytz import UTC
 class Config(object):
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
-    BABEL_DEFAULT_TIMEZONE = UTC
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def index():
     """ index route """
     return render_template('1-index.html')
