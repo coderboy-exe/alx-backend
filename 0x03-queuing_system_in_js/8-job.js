@@ -4,7 +4,7 @@ const createPushNotificationsJobs = (jobs, queue) => {
   };
 
   jobs.map((j) => {
-    const job = queue.create('push_notification_code_3', j).save( (err) => {
+    const job = queue.create('push_notification_code_3', j).save((err) => {
 	if (!err) {
 	  console.log('Notification job created:', job.id)
 	}
